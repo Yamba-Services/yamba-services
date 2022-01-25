@@ -81,7 +81,7 @@
                             <hr />
                             <div class="row">
                                 <div class="col-md-9">
-                                    <p class="text-inverse text-left m-b-0">J'ai un compt! <span><a href="index.php"><b class="text-primary">Se connecter</b></a></span></p>
+                                    <p class="text-inverse text-left m-b-0">I have a accoun! <span><a href="index.php"><b class="text-primary">Se connecter</b></a></span></p>
                                 </div>
                                 <div class="col-md-3">
                                     <img src="assets/images/auth/logo1.png" alt="small-logo.png" width="80px" height="80px" class="mr-4">
