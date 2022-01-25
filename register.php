@@ -63,15 +63,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="checkbox-fade fade-in-primary">
-                                        <label>
-                                            <input type="checkbox" value="">
-                                            <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                            <span class="text-inverse">Send me the <a href="#!">Newsletter</a> weekly.</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="row m-t-30">
                                 <div class="col-md-12">
