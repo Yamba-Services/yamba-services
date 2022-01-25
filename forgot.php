@@ -26,7 +26,7 @@
                                 <div class="row m-t-25 text-left">
                                     <div class="col-12">
                                         <div class="checkbox-fade fade-in-primary d-">
-                                        <a href="#" class="text-right f-w-600"> Se connecter</a>
+                                        <a href="index.php" class="text-right f-w-600 text-primary"> Se connecter</a>
                                         </div>
                                     </div>
                                 </div>
