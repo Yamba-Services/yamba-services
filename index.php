@@ -8,7 +8,7 @@
 
                     <form class="md-float-material form-material">
                         <div class="text-center">
-                            <img src="assets/images/logo.png" alt="logo.png">
+                            <img src="assets/images/auth/logo.png" alt="logo.png" width="100px" height="100px" class=" img-circle">
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">
@@ -37,7 +37,7 @@
                                             </label>
                                         </div>
                                         <div class="forgot-phone text-right f-right">
-                                            <a href="#" class="text-right f-w-600"> Forgot Password?</a>
+                                            <a href="forgot.php" class="text-right f-w-600"> Forgot Password?</a>
                                         </div>
                                     </div>
                                 </div>
