@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <form class="md-float-material form-material">
+                <form class="md-float-material form-material" method="POST">
                     <div class="text-center">
                         <img src="assets/images/auth/logo.png" alt="logo.png" width="100px" height="100px" class=" img-circle">
                     </div>
@@ -100,5 +100,9 @@
 
 <?php include_once 'footer.php' ?>
 </body>
-
+<script>
+    $(document).ready(function(){
+        $("")
+    });
+</script>
 </html>
