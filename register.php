@@ -182,6 +182,7 @@
 
                             } else if (data == "success") {
                                 $("#message").html("enregistrement reussi!").addClass("text-success");
+                                $("#register")[0].reset();
                             } else if (data == "faille") {
                                 $("#message").html("Echec de l'enregistrement!").addClass("text-success");
                             }
