@@ -19,7 +19,6 @@
                                 <input type="text" name="nom_prenom" id="nom_prenom" class="form-control">
                                 <span class="form-bar"></span>
                                 <label class="float-label">Nom & Prenoms</label>
-                                <div id="noms"></div>
                             </div>
                             <div class="form-group form-primary">
                                 <input type="text" name="telephone" id="telephone" class="form-control">
@@ -44,9 +43,19 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-primary">
-                                        <input type="password" name="password" class="form-control">
-                                        <span class="form-bar"></span>
-                                        <label class="float-label">Password</label>
+                                        <div class="row">
+                                            <div class="col-10">
+                                            <input type="password" name="password" id="password" class="form-control">
+                                            <span class="form-bar"></span>
+                                            <label class="float-label ml-4">Password</label>
+                                            </div>
+                                            <div class="col-2" id="view" hidden>
+                                                <a href="" class="toggle_hide_password">
+                                                <i id="icon" aria-hidden="true"></i>
+                                                </a>
+                                                <span class="form-bar"></span>
+                                            </div>
+                                        </div>             
                                         <div id="passwords"></div>
                                     </div>
                                 </div>
@@ -100,6 +109,9 @@
 </body>
 <script>
     $(document).ready(function() {
+
+
+
         $("#telephone").keyup(function() {
             $("#phone").removeClass("border border-danger");
             $("#tel").html("").removeClass("text-danger");
