@@ -113,8 +113,5 @@
 <?php include_once 'footer.php' ?>
 <!-- <script type="text/javascript" src="php/Jquery/function.js"></script> -->
 </body>
-<script>
-    
-</script>
 
 </html>
