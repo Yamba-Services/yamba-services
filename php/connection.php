@@ -72,10 +72,53 @@ public function SelectAll($tblname, $valeur){
 
 }
 
+public function Verify($tabl,$colum, $value){
+
+  $myqls = "SELECT * FROM $tabl WHERE $colum = $value";
+
+  $mysql =$this->getConnection()->prepare($myqls);
+
+  $mysql->execute();
+  
+  if($mysql->rowCount()>0){
+    return  $mysql->fetch();
+    echo 1;
+  }
+  else{
+    echo 0;
+  }
+}
+
+public function Updated($table, $user_id, $rowId, $fields = array()) {
+
+  $columns = [];
+
+  foreach ($fields as $name => $value) {
+      $columns[] = "`{$name}` = :{$name}";
+  }
+
+  $sql = sprintf('UPDATE %s SET %s WHERE  %s = %s'
+          , $table
+          , implode(', ', $columns)
+          , $user_id
+  );
+
+  if ($stmt = $this->pdo->prepare($sql)) {
+      $stmt->execute($fields);
+  }
+}
+
 }
 
 $object = new Database();
-// $values = array('email'=>'email@gmail.com','password'=>'14255666','nom_prenom'=>'Simeon _ZONGO','telephone'=>'67602470','genre'=>'Male');
+//$object->Verify("users",);
+//  $values = array('email'=>'email@gmail.com','password'=>'14255666','nom_prenom'=>'Simeon _ZONGO','telephone'=>'67602470','genre'=>'Male');
+//  if($object->Updated("users","id_users",$values)==1){
+//   echo "super insert";
+//  }
+
+
+
 // if ($object->Insertion("users",$values)==1){
 //   echo "super insert";
 // }

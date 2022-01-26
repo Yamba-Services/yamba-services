@@ -11,16 +11,14 @@ if(!empty($_POST["email"])){
 $existe = $object->getConnection()->query("SELECT * FROM users WHERE email = '$email'");
 $existe->execute();
 if($existe->rowCount() >0){
-
-
 $exis = $existe->fetch();
-foreach($exis as $verifi){
-    if(password_verify($password, $verifi["password"])){
+
+    if(password_verify($password, $exis["password"])){
         echo 'true';
     }else{
         echo 'false';
     }
-}
+
 
 }
 else{
@@ -28,8 +26,3 @@ else{
 }
 
 }
-
-
-
-
-?>
