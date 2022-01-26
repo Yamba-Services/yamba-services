@@ -80,6 +80,26 @@ $(document).ready(function(){
             $("#passwordconf").addClass("border border-danger");
             $("#passconfirm").html("password incorrect!").addClass("text-danger");
 
+          }else{
+            $.ajax({
+              URL: "php/ajax/insert.php",
+              method: "POST",
+              data: $(this).serialize(),
+              success: function(data){
+                if(data == "existe"){
+                  $("#emaills").addClass("border border-danger");
+            $("#emails").html("Email deja existant!").addClass("text-danger");
+
+                }
+                else if(data == "success"){
+                  $("#message").html("enregistrement reussi!").addClass("text-success");
+                }
+                else if(data == "faille"){
+                  $("#message").html("Echec de l'enregistrement!").addClass("text-success");
+                }
+                $("#message").html(data);
+              }
+            });
           }
         }
 

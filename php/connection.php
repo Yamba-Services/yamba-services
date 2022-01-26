@@ -84,17 +84,17 @@ $object = new Database();
 //   echo "bade insert";
 // }
 
-$oj = $object->SelectAll("users",'telephone');
-echo $oj;
+// $oj = $object->SelectAll("users",'telephone');
+// echo $oj;
 // if($object->Delete("users","id_users","16")==1){
 //   echo "super";
 // }
-$myql = "SELECT * FROM users";
-   $donne = $object->getConnection()->prepare($myql);
-    $donne->execute();
-    while($don = $donne->fetch()){
-      echo $don['telephone'].' ';
-    }
+// $myql = "SELECT * FROM users";
+//    $donne = $object->getConnection()->prepare($myql);
+//     $donne->execute();
+//     while($don = $donne->fetch()){
+//       echo $don['telephone'].' ';
+//     }
 
 
 

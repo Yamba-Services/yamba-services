@@ -14,7 +14,13 @@
                                 <div class="col-md-12">
                                     <h3 class="text-center txt-primary">Sign up</h3>
                                 </div>
+                                
                             </div>
+                            <div class="text-center" id="message">
+                                
+                                   
+                                </div>
+                                <br>
                             <div class="form-group form-primary">
                                 <input type="text" name="nom_prenom" id="nom_prenom" class="form-control">
                                 <span class="form-bar"></span>
