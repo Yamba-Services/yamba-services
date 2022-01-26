@@ -14,13 +14,13 @@
                                 <div class="col-md-12">
                                     <h3 class="text-center txt-primary">Sign up</h3>
                                 </div>
-                                
+
                             </div>
                             <div class="text-center" id="message">
-                                
-                                   
-                                </div>
-                                <br>
+
+
+                            </div>
+                            <br>
                             <div class="form-group form-primary">
                                 <input type="text" name="nom_prenom" id="nom_prenom" class="form-control">
                                 <span class="form-bar"></span>
@@ -55,19 +55,19 @@
                                     <div class="form-group form-primary">
                                         <div class="row">
                                             <div class="col-10">
-                                            <input type="password" name="password" id="password" class="form-control">
-                                            <span class="form-bar" id="pass"></span>
-                                            <label class="float-label ml-4">Password <span class="text-danger">*</span></label>
+                                                <input type="password" name="password" id="password" class="form-control">
+                                                <span class="form-bar" id="pass"></span>
+                                                <label class="float-label ml-4">Password <span class="text-danger">*</span></label>
                                             </div>
                                             <div class="col-2" id="view" hidden>
                                                 <a href="" class="toggle_hide_password">
-                                                <i id="icon" aria-hidden="true"></i>
+                                                    <i id="icon" aria-hidden="true"></i>
                                                 </a>
                                                 <span class="form-bar"></span>
                                             </div>
                                             <div id="passwords"></div>
-                                        </div>             
-                                        
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -119,5 +119,81 @@
 <?php include_once 'footer.php' ?>
 <!-- <script type="text/javascript" src="php/Jquery/function.js"></script> -->
 </body>
+<script>
+    $(document).ready(function() {
+        $("#password").on("input propertychange", function(){
+      if ($("#password").val() =="") {
+        $("#view").attr("hidden", true);
+        $("#icon").addClass("fa fa-eye-slash");
+    }else{
+        $("#view").attr("hidden", false);
+        $("#icon").addClass("fa fa-eye-slash 2x");
+    }
+    }); 
+    // supression des eurerrrrrrrr ================================
+   
+        $("#register").submit(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if ($("#nom_prenom").val() == "") {
+                $("#noms").addClass("border border-danger");
+                $("#nom_area").html("Champs vide").addClass("text-danger");
+            }
+
+            if ($("#telephone").val() == "") {
+                $("#phone").addClass("border border-danger");
+                $("#tel").html("Champs vide").addClass("text-danger");
+            }
+
+            if ($("#email").val() == "") {
+                $("#emaills").addClass("border border-danger");
+                $("#emails").html("Champs vide").addClass("text-danger");
+            }
+
+            if ($("#genre").val() == "") {
+                $("#genres").addClass("border border-danger");
+                $("#sex").html("Veuillez selectionnez").addClass("text-danger");
+            }
+
+            if ($("#password").val() == "") {
+                $("#pass").addClass("border border-danger");
+                $("#passwords").html("Champs vide").addClass("text-danger");
+            }
+
+            if ($("#confirmpassword").val() == "") {
+                $("#passwordconf").addClass("border border-danger");
+                $("#passconfirm").html("Champs vide").addClass("text-danger");
+            } else {
+                if ($("#password").val() != $("#confirmpassword").val()) {
+                    $("#passwordconf").addClass("border border-danger");
+                    $("#passconfirm").html("password incorrect!").addClass("text-danger");
+
+                } else {
+                    $("#message").html("enregistrement reussi!").addClass("text-success");
+
+                    $.ajax({
+                        url: "php/ajax/insert.php",
+                        method: "POST",
+                        data: $(this).serialize(),
+                        success: function(data) {
+                            if (data == "existe") {
+                                $("#emaills").addClass("border border-danger");
+                                $("#emails").html("Email deja existant!").addClass("text-danger");
+
+                            } else if (data == "success") {
+                                $("#message").html("enregistrement reussi!").addClass("text-success");
+                            } else if (data == "faille") {
+                                $("#message").html("Echec de l'enregistrement!").addClass("text-success");
+                            }
+                            $("#message").html(data);
+                        }
+                    });
+                }
+            }
+
+
+        });
+    })
+</script>
 
 </html>

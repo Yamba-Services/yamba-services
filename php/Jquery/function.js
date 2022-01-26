@@ -45,66 +45,7 @@ $(document).ready(function(){
         $("#passconfirm").html("").removeClass("text-danger");
     });
     /// submit button =====================================================
-    $("#register").submit(function(e) {
-        e.preventDefault();
-        if ($("#nom_prenom").val() == "") {
-            $("#noms").addClass("border border-danger");
-            $("#nom_area").html("Champs vide").addClass("text-danger");
-        }
-
-        if ($("#telephone").val() == "") {
-            $("#phone").addClass("border border-danger");
-            $("#tel").html("Champs vide").addClass("text-danger");
-        }
-
-        if ($("#email").val() == "") {
-            $("#emaills").addClass("border border-danger");
-            $("#emails").html("Champs vide").addClass("text-danger");
-        }
-
-        if ($("#genre").val() == "") {
-            $("#genres").addClass("border border-danger");
-            $("#sex").html("Veuillez selectionnez").addClass("text-danger");
-        }
-
-        if ($("#password").val() == "") {
-            $("#pass").addClass("border border-danger");
-            $("#passwords").html("Champs vide").addClass("text-danger");
-        }
-
-        if ($("#confirmpassword").val() == "") {
-            $("#passwordconf").addClass("border border-danger");
-            $("#passconfirm").html("Champs vide").addClass("text-danger");
-        }else{
-          if($("#password").val() != $("#confirmpassword").val()){
-            $("#passwordconf").addClass("border border-danger");
-            $("#passconfirm").html("password incorrect!").addClass("text-danger");
-
-          }else{
-            $.ajax({
-              URL: "php/ajax/insert.php",
-              method: "POST",
-              data: $(this).serialize(),
-              success: function(data){
-                if(data == "existe"){
-                  $("#emaills").addClass("border border-danger");
-            $("#emails").html("Email deja existant!").addClass("text-danger");
-
-                }
-                else if(data == "success"){
-                  $("#message").html("enregistrement reussi!").addClass("text-success");
-                }
-                else if(data == "faille"){
-                  $("#message").html("Echec de l'enregistrement!").addClass("text-success");
-                }
-                $("#message").html(data);
-              }
-            });
-          }
-        }
-
-        
-    });
+    
     $("#accepter").click(function(){
         $(this).is(':checked') ? $('#condition').prop('disabled', false) : $('#condition').prop('disabled', true);
 
@@ -137,3 +78,4 @@ $(document).ready(function(){
 //   $(document).ready(function() {
    
 // });
+

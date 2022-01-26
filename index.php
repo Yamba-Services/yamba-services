@@ -53,6 +53,7 @@
                                     </div>
                                     <div class="col-md-3">
                                     <img src="assets/images/auth/logo1.png" alt="small-logo.png" width="80px" height="80px">
+                                    
                                     </div>
                                 </div>
                             </div>
