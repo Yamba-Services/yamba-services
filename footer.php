@@ -15,4 +15,4 @@
 <script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
 <script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 <script type="text/javascript" src="assets/js/common-pages.js"></script>
-<script type="text/javascript" src="php/Jquery/function.js"></script>
+<!-- <script type="text/javascript" src="php/Jquery/function.js"></script> -->
