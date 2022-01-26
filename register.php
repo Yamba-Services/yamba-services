@@ -111,82 +111,10 @@
 </section>
 
 <?php include_once 'footer.php' ?>
+<!-- <script type="text/javascript" src="php/Jquery/function.js"></script> -->
 </body>
 <script>
-    $(document).ready(function() {
-
-
-        $("#nom_prenom").keyup(function() {
-            $("#noms").removeClass("border border-danger");
-            $("#nom_area").html("").removeClass("text-danger");
-        });
-
-        $("#telephone").keyup(function() {
-            $("#phone").removeClass("border border-danger");
-            $("#tel").html("").removeClass("text-danger");
-        });
-
-        $("#email").keyup(function() {
-            $("#emaills").removeClass("border border-danger");
-            $("#emails").html("").removeClass("text-danger");
-        });
-
-        $("#genre").change(function() {
-            $("#genre").removeClass("border border-danger");
-            $("#sex").html("").removeClass("text-danger");
-        });
-
-        $("#password").keyup(function() {
-            $("#pass").removeClass("border border-danger");
-            $("#passwords").html("").removeClass("text-danger");
-        });
-
-        $("#confirmpassword").keyup(function() {
-            $("#passwordconf").removeClass("border border-danger");
-            $("#passconfirm").html("").removeClass("text-danger");
-        });
-        
-        $("#register").submit(function(e) {
-            e.preventDefault();
-            if ($("#nom_prenom").val() == "") {
-                $("#noms").addClass("border border-danger");
-                $("#nom_area").html("Champs vide").addClass("text-danger");
-            }
-
-            if ($("#telephone").val() == "") {
-                $("#phone").addClass("border border-danger");
-                $("#tel").html("Champs vide").addClass("text-danger");
-            }
-
-            if ($("#email").val() == "") {
-                $("#emaills").addClass("border border-danger");
-                $("#emails").html("Champs vide").addClass("text-danger");
-            }
-
-            if ($("#genre").val() == "") {
-                $("#genres").addClass("border border-danger");
-                $("#sex").html("Veuillez selectionnez").addClass("text-danger");
-            }
-
-            if ($("#password").val() == "") {
-                $("#pass").addClass("border border-danger");
-                $("#passwords").html("Champs vide").addClass("text-danger");
-            }
-
-            if ($("#confirmpassword").val() == "") {
-                $("#passwordconf").addClass("border border-danger");
-                $("#passconfirm").html("Champs vide").addClass("text-danger");
-            }
-
-            
-        });
-
-        $("#accepter").click(function(){
-            $(this).is(':checked') ? $('#condition').prop('disabled', false) : $('#condition').prop('disabled', true);
-
-        });
-       
-    });
+    
 </script>
 
 </html>
