@@ -37,10 +37,11 @@
                             </div>
                             <div class="form-group form-primary">
                                 <select name="genre" id="genre" class=" form-control">
-                                    <option value="" id="genres">Genre<span class="text-danger">*</span></option>
+                                    <option value="">Genre</option>
                                     <option value="Homme">Homme</option>
                                     <option value="Femme">Femme</option>
                                 </select>
+                                <span class="form-bar" id="genres"></span>
                                 <div id="sex"></div>
                             </div>
                             <div class="row">
@@ -49,8 +50,8 @@
                                         <div class="row">
                                             <div class="col-10">
                                             <input type="password" name="password" id="password" class="form-control">
-                                            <span class="form-bar"></span>
-                                            <label class="float-label ml-4">Password</label>
+                                            <span class="form-bar" id="pass"></span>
+                                            <label class="float-label ml-4">Password <span class="text-danger">*</span></label>
                                             </div>
                                             <div class="col-2" id="view" hidden>
                                                 <a href="" class="toggle_hide_password">
@@ -58,11 +59,9 @@
                                                 </a>
                                                 <span class="form-bar"></span>
                                             </div>
+                                            <div id="passwords"></div>
                                         </div>             
-                                        <input type="password" name="password" id="password" class="form-control">
-                                        <span class="form-bar" id="pass"></span>
-                                        <label class="float-label">Password <span class="text-danger">*</span></label>
-                                        <div id="passwords"></div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -132,7 +131,7 @@
             $("#emails").html("").removeClass("text-danger");
         });
 
-        $("#genres").keyup(function() {
+        $("#genre").change(function() {
             $("#genre").removeClass("border border-danger");
             $("#sex").html("").removeClass("text-danger");
         });
@@ -146,7 +145,6 @@
             $("#passwordconf").removeClass("border border-danger");
             $("#passconfirm").html("").removeClass("text-danger");
         });
-        
         
         $("#register").submit(function(e) {
             e.preventDefault();
@@ -165,9 +163,9 @@
                 $("#emails").html("Champs vide").addClass("text-danger");
             }
 
-            if ($("#genres").val() == null) {
-                $("#genre").addClass("border border-danger");
-                $("#sex").html("Champs vide").addClass("text-danger");
+            if ($("#genre").val() == "") {
+                $("#genres").addClass("border border-danger");
+                $("#sex").html("Veuillez selectionnez").addClass("text-danger");
             }
 
             if ($("#password").val() == "") {
