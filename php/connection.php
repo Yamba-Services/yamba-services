@@ -40,19 +40,61 @@ class Database
             $sth->bindValue(':' . $f, $valu);
         }
         if ( $sth->execute()) {
-          echo 1;
+          return 1;
         }
         else {
-          echo 0;
+          return 0;
         }
   }
+// function to delete data in the db
+  public function Delete($tables, $tablesId, $data){
+    $pid = $data;
+    $stmts = "DELETE FROM ".$tables." WHERE ".$tablesId."=:pid";
+
+    $del = $this->getConnection()->prepare($stmts);
+   
+    if ($del->execute(array(':pid'=>$pid))) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+
+  }
+
+public function SelectAll($tblname, $valeur){
+  $myql = "SELECT * FROM ".$tblname;
+   $donne = $this->getConnection()->prepare($myql);
+    $donne->execute();
+    while($don = $donne->fetch()){
+      return $don[$valeur];
+    }
 
 }
 
-// $object = new Database();
-// $values = array('email'=>'value1','password'=>'value2');
-// $object->Insertion("users",$values);
+}
 
+$object = new Database();
+// $values = array('email'=>'email@gmail.com','password'=>'14255666','nom_prenom'=>'Simeon _ZONGO','telephone'=>'67602470','genre'=>'Male');
+// if ($object->Insertion("users",$values)==1){
+//   echo "super insert";
+// }
+// elseif ($object->Insertion("users",$values)==0){
+
+//   echo "bade insert";
+// }
+
+$oj = $object->SelectAll("users",'telephone');
+echo $oj;
+// if($object->Delete("users","id_users","16")==1){
+//   echo "super";
+// }
+$myql = "SELECT * FROM users";
+   $donne = $object->getConnection()->prepare($myql);
+    $donne->execute();
+    while($don = $donne->fetch()){
+      echo $don['telephone'].' ';
+    }
 
 
 
