@@ -75,6 +75,12 @@ $(document).ready(function(){
         if ($("#confirmpassword").val() == "") {
             $("#passwordconf").addClass("border border-danger");
             $("#passconfirm").html("Champs vide").addClass("text-danger");
+        }else{
+          if($("password").val() != $("confirmpassword").val()){
+            $("#passwordconf").addClass("border border-danger");
+            $("#passconfirm").html("password incorrect!").addClass("text-danger");
+
+          }
         }
 
         
