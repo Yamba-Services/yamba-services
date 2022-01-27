@@ -46,12 +46,15 @@ require_once "php/connection.php";
                                 <label class="float-label">Password Confirm</label>
                                 <div id="confirm-area"></div>
                             </div>
-                            <div class="row m-t-25 text-left">
+                            <div class="row m-t-25 text-left" hidden id="message">
+                                <div class="col-12 text-center text-success" >
+                                    <p> réinitialisation réussi! Clicker <a href="index.php"> ICI </a> pour vous connecter!</p>
+                                </div>
 
                             </div>
                             <div class="row m-t-30">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
+                                    <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Réinitialiser</button>
                                 </div>
                             </div>
                             <hr />
@@ -115,6 +118,7 @@ require_once "php/connection.php";
                                     position: 'topRight'
                                 });
                             $("form")[0].reset();
+                            $("#message").attr("hidden", false);
                         }
                         else if (data=="failled") {
                             iziToast.error({
