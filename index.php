@@ -16,11 +16,11 @@
                                     <div class="col-md-12">
                                         <h3 class="text-center">Sign In</h3>
                                     </div>
-                                    <div id="message" class="text-center">
+                                </div>
+                                <div class="text-center" id="message">
 
                                     </div>
                                     <br>
-                                </div>
                                 <div class="form-group form-primary">
                                     <input type="text" name="email" id="email" class="form-control" >
                                     <span class="form-bar" id="emails"></span>
@@ -119,12 +119,13 @@
                                  $("#emaills").html("email invalide!").addClass("text-danger");
                             }else if(data == "true"){
                                 $("#message").html("Connexion reussi!").addClass("text-success");
-                                $("#signIn")[0].reset();
+                                
 
                             }else if (data == 'false'){
                                 $("#passwords").addClass("border border-danger");
                                 $("#pasword").html("password incorrect!").addClass("text-danger");
                             }
+
                             $("#message").html(data);
                         }
                     })
