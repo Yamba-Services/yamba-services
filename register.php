@@ -10,15 +10,15 @@
                     </div>
                     <div class="auth-box card">
                         <div class="card-block">
-                            <div class="row m-b-20">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <h3 class="text-center txt-primary">Sign up</h3>
                                 </div>
-
+                                <div class="col-12">
+                                <div class="text-center" id="message">
+                                </div>
                             </div>
-                            <div class="text-center" id="message">
-
-
+                        
                             </div>
                             <br>
                             <div class="form-group form-primary">
@@ -169,7 +169,7 @@
                     $("#passconfirm").html("password incorrect!").addClass("text-danger");
 
                 } else {
-                    $("#message").html("enregistrement reussi!").addClass("text-success");
+                    // $("#message").html("enregistrement reussi!").addClass("text-success");
 
                     $.ajax({
                         url: "php/ajax/insert.php",
@@ -178,15 +178,42 @@
                         success: function(data) {
                             if (data == "existe") {
                                 $("#emaills").addClass("border border-danger");
+                                $("#email").addClass("text-danger");
                                 $("#emails").html("Email deja existant!").addClass("text-danger");
-
-                            } else if (data == "success") {
-                                $("#message").html("enregistrement reussi!").addClass("text-success");
+                                // $("#message").html("Email deja existant!").addClass("alert alert-danger bg-danger text-white").removeClass("text-success");
+                                iziToast.info({
+                                    title: 'Existe',
+                                    message: 'Email deja existant',
+                                    position: 'topLeft'
+                                });
+                               
+                            }  if (data == "success") {
+                               // $("#message").html("enregistrement reussi!").addClass("text-success");
                                 $("#register")[0].reset();
-                            } else if (data == "faille") {
-                                $("#message").html("Echec de l'enregistrement!").addClass("text-success");
+                                iziToast.success({
+                                    title: 'Succes!',
+                                    message: 'Votre reinitialisation à reussi',
+                                    position: 'topRight'
+                                });
+                            }  if (data == "faille") {
+                                // $("#message").html("Echec de l'enregistrement!").addClass("text-success");
+                                iziToast.error({
+                                    title: 'Erreur',
+                                    message: 'Echec de l\'enregistrement',
+                                    position: 'topCenter'
+                                });
                             }
-                            $("#message").html(data);
+                             if(data == "invalide"){
+                                $("#emaills").addClass("border border-danger");
+                                $("#email").addClass("text-danger");
+                                $("#emails").html("Email Invalide!").addClass("text-danger");
+                                iziToast.warning({
+                                    title: 'Echec',
+                                    message: 'Email Invalide',
+                                    position: 'topCenter'
+                                });
+                            }
+                           // $("#message").html(data);
                         }
                     });
                 }

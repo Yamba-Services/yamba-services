@@ -26,6 +26,7 @@ $(document).ready(function(){
     $("#email").keyup(function() {
         $("#emaills").removeClass("border border-danger");
         $("#emails").html("").removeClass("text-danger");
+        $("#email").removeClass("text-danger");
     });
     // supression des eurerrrrrrrr ================================
 
@@ -43,6 +44,15 @@ $(document).ready(function(){
     $("#confirmpassword").keyup(function() {
         $("#passwordconf").removeClass("border border-danger");
         $("#passconfirm").html("").removeClass("text-danger");
+    });
+    $("#passwords").keyup(function() {
+        $("#pass-area").html("").removeClass("text-danger");
+        $("#passwording").removeClass("border border-danger");
+    });
+    // supression des eurerrrrrrrr ================================
+    $("#confirms").keyup(function() {
+        $("#confirm-area").html("").removeClass("text-danger");
+        $("#confirmation").removeClass("border border-danger");
     });
     /// submit button =====================================================
     

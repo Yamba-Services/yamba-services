@@ -73,20 +73,22 @@ public function SelectAll($tblname, $valeur){
 }
 
 public function Verify($tabl,$colum, $value){
+  $pid = $value;
+  $myqls = "SELECT * FROM ".$tabl." where ".$colum." =:pid";
 
-  $myqls = "SELECT * FROM $tabl WHERE $colum = $value";
+  $mysql = $this->getConnection()->prepare($myqls);
 
-  $mysql =$this->getConnection()->prepare($myqls);
 
-  $mysql->execute();
+  $mysql->execute(array(':pid'=>$pid));
   
   if($mysql->rowCount()>0){
-    return  $mysql->fetch();
-    echo 1;
+    //return  $mysql->fetch();
+    return 1;
   }
   else{
-    echo 0;
+    return 0;
   }
+ 
 }
 
 public function Updated($table, $user_id, $rowId, $fields = array()) {
@@ -107,11 +109,22 @@ public function Updated($table, $user_id, $rowId, $fields = array()) {
       $stmt->execute($fields);
   }
 }
-
+// validate email
+function validateEmail($email) {
+  $regex = "/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
+   if(preg_match($regex, $email)){
+     return 1;
+   }
+   else{
+    return 0;
+   }
+ 
+}
 }
 
 $object = new Database();
-//$object->Verify("users",);
+// $object->Verify("users","email","zongowsimeo@gmail.com");
+// $object->validateEmail("zongowsimeo@gmail.com");
 //  $values = array('email'=>'email@gmail.com','password'=>'14255666','nom_prenom'=>'Simeon _ZONGO','telephone'=>'67602470','genre'=>'Male');
 //  if($object->Updated("users","id_users",$values)==1){
 //   echo "super insert";

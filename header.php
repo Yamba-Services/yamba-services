@@ -33,6 +33,8 @@
       <link rel="stylesheet" type="text/css" href="assets/icon/font-awesome/css/font-awesome.min.css">
       <!-- Style.css -->
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!-- toastre -->
+      <link rel="stylesheet" href="assets/js/izitoast/css/iziToast.min.css">
   </head>
 
   <body themebg-pattern="theme1">
