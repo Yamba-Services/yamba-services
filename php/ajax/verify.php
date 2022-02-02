@@ -12,9 +12,21 @@ if (!empty($_POST["email"])) {
     $existe->execute();
     if ($existe->rowCount() > 0) {
         $exis = $existe->fetch();
-
         if (password_verify($password, $exis["password"])) {
-            echo 'true';
+            $_SESSION["email"] =  $email;
+            $_SESSION["password"] = $password;
+            if ($exis["role"]=="users") {
+               echo "users";
+            }
+            if ($exis["role"]=="admin") {
+                echo "admin";
+             }
+             if ($exis["role"]=="supervisor") {
+                echo "supervisor";
+             }
+             if ($exis["role"]=="agent") {
+                echo "agent";
+             }
         } else {
             echo 'false';
         }
@@ -37,4 +49,14 @@ elseif (!empty($_POST["emaily"])){
     else {
         echo "mal";
     }
+}
+
+elseif (!empty($_POST["mails"])) {
+    $emails = $_POST["mails"];
+    if($object->validateEmail($emails)==1){
+       echo "true";
+     }
+     else{
+        echo "mail invalide";
+     }
 }

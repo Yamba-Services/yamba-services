@@ -1,140 +1,831 @@
-<?php include_once 'header.php'?>
-<section class="login-block">
-        <!-- Container-fluid starts -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <!-- Authentication card start -->
+<?php
+include_once "headCommerce.php";
+?>
 
-                    <form class="md-float-material form-material" method="POST" id="signIn">
-                        <div class="text-center">
-                            <img src="assets/images/auth/logo.png" alt="logo.png" width="100px" height="100px" class=" img-circle">
-                        </div>
-                        <div class="auth-box card">
-                            <div class="card-block">
-                                <div class="row m-b-20">
-                                    <div class="col-md-12">
-                                        <h3 class="text-center">Sign In</h3>
-                                    </div>
-                                </div>
-                                <div class="text-center" id="message">
+<!-- Header Inner -->
+<div class="header-inner">
+	<div class="container">
+		<div class="cat-nav-head">
+			<div class="row">
+				<div class="col-lg-3">
 
-                                    </div>
-                                    <br>
-                                <div class="form-group form-primary">
-                                    <input type="text" name="email" id="email" class="form-control" >
-                                    <span class="form-bar" id="emails"></span>
-                                    <label class="float-label">Your Email Address</label>
-                                    <div id="emaills"></div>
-                                </div>
-                                <div class="form-group form-primary">
-                                    <input type="password" name="password" id="password" class="form-control" >
-                                    <span class="form-bar" id="passwords"></span>
-                                    <label class="float-label">Password</label>
-                                    <div id="pasword"></div>
-                                </div>
-                                <div class="row m-t-25 text-left">
-                                    <div class="col-12">
-                                        <div class="checkbox-fade fade-in-primary d-">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
-                                            </label>
-                                        </div>
-                                        <div class="forgot-phone text-right f-right">
-                                            <a href="forgot.php" class="text-right f-w-600"> Forgot Password?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row m-t-30">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <p class="text-inverse text-left m-b-0">Je suis nouveau! <a href="register.php" class="text-primary"><b>Créer un compt</b></a></p>
-                                    </div>
-                                    <div class="col-md-3">
-                                    <img src="assets/images/auth/logo1.png" alt="small-logo.png" width="80px" height="80px">
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- end of form -->
-                </div>
-                <!-- end of col-sm-12 -->
-            </div>
-            <!-- end of row -->
-        </div>
-        <!-- end of container-fluid -->
-    </section>
-    <?php include_once 'footer.php'?>
-    </body>
-    <script>
-        $(document).ready(function(){
-            $("#password").on("input propertychange", function(){
-                if($("#password").val() == ""){
-                    $("#view").attr("hidden", true);
-                    $("#icon").addClass("fa fa-eye-slash");
-                }else{
-                    $("#view").attr("hidden", false);
-                    $("#icon").addClass("fa fa-eye-slash 2x");
-                }
-            });
-            $("#email").keyup(function(){
-                $("#emails").removeClass("border border-danger");
-                $("#emaills").html("").removeClass("text-danger");
-            });
+				</div>
+				<div class="col-lg-9 col-12">
+					<div class="menu-area">
+						<!-- Main Menu -->
+						<nav class="navbar navbar-expand-lg">
+							<div class="navbar-collapse">
+								<div class="nav-inner">
+									<ul class="nav main-menu menu navbar-nav">
+										<li class="active"><a href="index.php">Accueil</a></li>
+										<li><a href="boutique.php">Boutique</a></li>
+										<li><a href="appropos.php">A propos</a></li>
+										<li><a href="procedure.php">Procedure</a></li>
+										<li><a href="condition.php">Condition</a></li>
+										<li><a href="blog.php">Blog</a>
 
-            $("#password").keyup(function(){
-                $("#passwords").removeClass("border border-danger");
-                $("#pasword").html("").removeClass("text-danger");
-            });
+										</li>
+										<li><a href="contact.php">Contact </a></li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+						<!--/ End Main Menu -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ End Header Inner -->
+</header>
+<!--/ End Header -->
 
-            $("#signIn").submit(function(e){
-                e.preventDefault();
-                e.stopPropagation();
+<!-- Slider Area -->
+<section class="hero-slider">
+	<!-- Single Slider -->
+	<div class="single-slider">
+		<!-- <img src="assets/images/auth/logo11.png" alt="" srcset="" width="100%"> -->
+		<div class="container">
+			<div class="row no-gutters">
 
-                if($("#email").val() == ""){
-                    $("#emails").addClass("border border-danger");
-                    $("#emaills").html("champs vide").addClass("text-danger");
-                }
+				<div class="col-lg-12 offset-lg-3 col-12">
+					<div class="text-inner">
+						<div class="row">
+							<div class="col-lg-12 col-12">
+								<div class="hero-text">
+									<h1><span class="text-white">UP TO 50% OFF </span>Shirt For Man</h1>
+									<p class="text-white">Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
+									<div class="button">
+										<a href="#exampleModal" data-toggle="modal"  class="btn" id="show">Shop Now!</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                if($("#password").val() == ""){
-                    $("#passwords").addClass("border border-danger");
-                    $("#pasword").html("champs vide").addClass("text-danger");
-                }else{
-                    $.ajax({
-                        url: "php/ajax/verify.php",
-                        method: "POST",
-                        data: $(this).serialize(),
-                        success: function(data){
-                            if(data == "faille"){
-                                $("#emails").addClass("border border-danger");
-                                 $("#emaills").html("email invalide!").addClass("text-danger");
-                            }else if(data == "true"){
-                                $("#message").html("Connexion reussi!").addClass("text-success");
-                                
+			</div>
+			
+		</div>
+		
+	</div>
+	<!--/ End Single Slider -->
+</section>
+<!--/ End Slider Area -->
 
-                            }else if (data == 'false'){
-                                $("#passwords").addClass("border border-danger");
-                                $("#pasword").html("password incorrect!").addClass("text-danger");
-                            }
+<!-- Start Small Banner  -->
+<section class="small-banner section">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Single Banner  -->
+			<?php for ($i = 0; $i < 3; $i++) {
+			?>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-banner" id="banners">
+						<img src="assets/ecommerce/images/yamba2.png" alt="#">
+						<div class="content " id="contents">
+							<p>Man's Collectons</p>
+							<h3>Summer travel <br> collection</h3>
+							<a href="#">Discover Now</a>
+						</div>
+					</div>
+				</div>
+			<?php }; ?>
+			<!-- /End Single Banner  -->
+		</div>
+	</div>
+</section>
+<!-- End Small Banner -->
 
-                            $("#message").html(data);
-                        }
-                    })
-                }
-            });
-            
+<!-- Start Product Area -->
+<div class="product-area section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h2>Services d'Actualités</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="product-info">
+					<div class="nav-main">
+						<!-- Tab Nav -->
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Réseaux sociaux</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Solution numeriques</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Lives Streaming</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessores</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Photos Shooting</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Locations</a></li>
+						</ul>
+						<!--/ End Tab Nav -->
+					</div>
+					<div class="tab-content" id="myTabContent">
+						<!-- Start Single Tab -->
+						<div class="tab-pane fade show active" id="man" role="tabpanel">
+							<div class="tab-single">
+								<div class="row">
+								<?php for ($i=0; $i <4 ; $i++) { 
+										# code...
+									?>
+									<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="product-details.html">
+													<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+													<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+												</a>
+												<div class="button-head bg-danger" >
+													<div class="product-action mr-3">
+														<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Voire plus</span></a>
+														<a title="Wishlist" href="#"><i class="   ti-shopping-cart"></i><span>Boutique</span></a>
+													</div>
+													<div class="product-action-2 ml-3">
+														<a title="Ajouter au panier" href="#">Ajouter au panier</a>
+													</div>
+												</div>
+											</div>
+											<div class="product-content">
+												<h3><a href="product-details.html">Creation de pages facebook</a></h3>
+												<div class="product-price">
+													<span class="text-danger">15.000F CFAF</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php }  ?>
+								</div>
+							</div>
+						</div>
+						<!--/ End Single Tab -->
+						<!-- Start Single Tab -->
+						<div class="tab-pane fade" id="women" role="tabpanel">
+							<div class="tab-single">
+								<div class="row">
+								<?php for ($i=0; $i <4 ; $i++) { 
+										# code...
+									?>
+									<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="product-details.html">
+													<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+													<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+												</a>
+												<div class="button-head">
+													<div class="product-action">
+														<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+														<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+														<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+													</div>
+													<div class="product-action-2">
+														<a title="Add to cart" href="#">Add to cart</a>
+													</div>
+												</div>
+											</div>
+											<div class="product-content">
+												<h3><a href="product-details.html">Women Hot Collection</a></h3>
+												<div class="product-price">
+													<span>$29.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php }  ?>
+								</div>
+							</div>
+						</div>
+						<!--/ End Single Tab -->
+						<!-- Start Single Tab -->
+						<div class="tab-pane fade" id="kids" role="tabpanel">
+							<div class="tab-single">
+								<div class="row">
+								<?php for ($i=0; $i <4 ; $i++) { 
+										# code...
+									?>
+									<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="product-details.html">
+													<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+													<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+												</a>
+												<div class="button-head">
+													<div class="product-action">
+														<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+														<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+														<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+													</div>
+													<div class="product-action-2">
+														<a title="Add to cart" href="#">Add to cart</a>
+													</div>
+												</div>
+											</div>
+											<div class="product-content">
+												<h3><a href="product-details.html">Women Hot Collection</a></h3>
+												<div class="product-price">
+													<span>$29.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php }  ?>
+								</div>
+							</div>
+						</div>
+						<!--/ End Single Tab -->
+						<!-- Start Single Tab -->
+						<div class="tab-pane fade" id="accessories" role="tabpanel">
+							<div class="tab-single">
+								<div class="row">
+									<?php for ($i=0; $i <4 ; $i++) { 
+										# code...
+									?>
+									<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="product-details.html">
+													<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+													<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+												</a>
+												<div class="button-head">
+													<div class="product-action">
+														<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+														<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+														<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+													</div>
+													<div class="product-action-2">
+														<a title="Add to cart" href="#">Add to cart</a>
+													</div>
+												</div>
+											</div>
+											<div class="product-content">
+												<h3><a href="product-details.html">Women Hot Collection</a></h3>
+												<div class="product-price">
+													<span>$29.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php }  ?>
+								</div>
+							</div>
+						</div>
+						<!--/ End Single Tab -->
+						<!-- Start Single Tab -->
+						<div class="tab-pane fade" id="essential" role="tabpanel">
+							<div class="tab-single">
+								<div class="row">
+								<?php for ($i=0; $i <4 ; $i++) { 
+										# code...
+									?>
+									<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="product-details.html">
+													<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+													<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+												</a>
+												<div class="button-head">
+													<div class="product-action">
+														<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+														<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+														<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+													</div>
+													<div class="product-action-2">
+														<a title="Add to cart" href="#">Add to cart</a>
+													</div>
+												</div>
+											</div>
+											<div class="product-content">
+												<h3><a href="product-details.html">Women Hot Collection</a></h3>
+												<div class="product-price">
+													<span>$29.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php }  ?>
+								</div>
+							</div>
+						</div>
+						<!--/ End Single Tab -->
+						<!-- Start Single Tab -->
+						<div class="tab-pane fade" id="prices" role="tabpanel">
+							<div class="tab-single">
+								<div class="row">
+								<?php for ($i=0; $i <4 ; $i++) { 
+										# code...
+									?>
+									<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="product-details.html">
+													<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+													<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+												</a>
+												<div class="button-head">
+													<div class="product-action">
+														<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+														<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+														<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+													</div>
+													<div class="product-action-2">
+														<a title="Add to cart" href="#">Add to cart</a>
+													</div>
+												</div>
+											</div>
+											<div class="product-content">
+												<h3><a href="product-details.html">Women Hot Collection</a></h3>
+												<div class="product-price">
+													<span>$29.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php }  ?>
+								</div>
+							</div>
+						</div>
+						<!--/ End Single Tab -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Product Area -->
+
+<!-- Start Midium Banner  -->
+<section class="midium-banner">
+	<div class="container">
+		<div class="row">
+			<!-- Single Banner  -->
+			<div class="col-lg-6 col-md-6 col-12">
+				<div class="single-banner">
+					<img src="https://via.placeholder.com/600x370" alt="#">
+					<div class="content">
+						<p>Man's Collectons</p>
+						<h3>Man's items <br>Up to<span> 50%</span></h3>
+						<a href="#">Shop Now</a>
+					</div>
+				</div>
+			</div>
+			<!-- /End Single Banner  -->
+			<!-- Single Banner  -->
+			<div class="col-lg-6 col-md-6 col-12">
+				<div class="single-banner">
+					<img src="https://via.placeholder.com/600x370" alt="#">
+					<div class="content">
+						<p>shoes women</p>
+						<h3>mid season <br> up to <span>70%</span></h3>
+						<a href="#" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+			<!-- /End Single Banner  -->
+		</div>
+	</div>
+</section>
+<!-- End Midium Banner -->
+
+<!-- Start Most Popular -->
+<div class="product-area most-popular section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h2>Hot Item</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="owl-carousel popular-slider">
+					<!-- Start Single Product -->
+					<?php for ($i=0; $i <5 ; $i++) { ?>
+					<div class="single-product">
+						<div class="product-img">
+							<a href="product-details.html">
+								<img class="default-img" src="assets/ecommerce/images/live.png" alt="#">
+								<img class="hover-img" src="assets/ecommerce/images/live.png" alt="#">
+								<span class="out-of-stock">Hot</span>
+							</a>
+							<div class="button-head">
+								<div class="product-action">
+									<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+									<a title="Wishlist" href="#"><i class=" ti-heart" ></i><span>Add to Wishlist</span></a>
+									<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+								</div>
+								<div class="product-action-2">
+								
+									
+									<a title="Add to cart" onclick="<?php  ?>" href="#">Add to cart</a>
+								</div>
+							</div>
+						</div>
+						<div class="product-content">
+							<h3><a href="#">Black Sunglass For Women</a></h3>
+							<div class="product-price">
+								<span class="old">$60.00</span>
+								<span>$50.00</span>
+							</div>
+						</div>
+					</div>
+					<?php } ?>
+					<!-- End Single Product -->
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Most Popular Area -->
+
+<!-- Start Shop Home List  -->
+<section class="shop-home-list section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-12">
+				<div class="row">
+					<div class="col-12">
+						<div class="shop-section-title">
+							<h1>On sale</h1>
+						</div>
+					</div>
+				</div>
+				<!-- Start Single List  -->
+				<?php for ($i=0; $i <3 ; $i++) { ?>
+				<div class="single-list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-12">
+							<div class="list-image overlay">
+								<img src="https://via.placeholder.com/115x140" alt="#">
+								<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-12 no-padding">
+							<div class="content">
+								<h4 class="title"><a href="#">Licity jelly leg flat Sandals</a></h4>
+								<p class="price with-discount">$59</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php }?>
+				<!-- End Single List  -->
+			
+			</div>
+			<div class="col-lg-4 col-md-6 col-12">
+				<div class="row">
+					<div class="col-12">
+						<div class="shop-section-title">
+							<h1>Best Seller</h1>
+						</div>
+					</div>
+				</div>
+				<!-- Start Single List  -->
+				<?php for ($i=0; $i <3 ; $i++) { ?>
+				<div class="single-list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-12">
+							<div class="list-image overlay">
+								<img src="https://via.placeholder.com/115x140" alt="#">
+								<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-12 no-padding">
+							<div class="content">
+								<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
+								<p class="price with-discount">$65</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php } ?>
+				<!-- End Single List  -->
+				
+			</div>
+			<div class="col-lg-4 col-md-6 col-12">
+				<div class="row">
+					<div class="col-12">
+						<div class="shop-section-title">
+							<h1>Top viewed</h1>
+						</div>
+					</div>
+				</div>
+				<!-- Start Single List  -->
+				<div class="single-list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-12">
+							<div class="list-image overlay">
+								<img src="https://via.placeholder.com/115x140" alt="#">
+								<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-12 no-padding">
+							<div class="content">
+								<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
+								<p class="price with-discount">$22</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Single List  -->
+				<!-- Start Single List  -->
+				<div class="single-list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-12">
+							<div class="list-image overlay">
+								<img src="https://via.placeholder.com/115x140" alt="#">
+								<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-12 no-padding">
+							<div class="content">
+								<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
+								<p class="price with-discount">$35</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Single List  -->
+				<!-- Start Single List  -->
+				<div class="single-list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-12">
+							<div class="list-image overlay">
+								<img src="https://via.placeholder.com/115x140" alt="#">
+								<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-12 no-padding">
+							<div class="content">
+								<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
+								<p class="price with-discount">$99</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Single List  -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Shop Home List  -->
+
+<!-- Start Cowndown Area -->
+<section class="cown-down">
+	<div class="section-inner ">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-12 padding-right">
+					<div class="image">
+						<img src="https://via.placeholder.com/750x590" alt="#">
+					</div>
+				</div>
+				<div class="col-lg-6 col-12 padding-left">
+					<div class="content">
+						<div class="heading-block">
+							<p class="small-title">Deal of day</p>
+							<h3 class="title">Beatutyful dress for women</h3>
+							<p class="text">Suspendisse massa leo, vestibulum cursus nulla sit amet, frungilla placerat lorem. Cars fermentum, sapien. </p>
+							<h1 class="price">$1200 <s>$1890</s></h1>
+							<div class="coming-time">
+								<div class="clearfix" data-countdown="2021/02/30"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /End Cowndown Area -->
+
+<!-- Start Shop Blog  -->
+<section class="shop-blog section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h2>From Our Blog</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-12">
+				<!-- Start Single Blog  -->
+				<div class="shop-single-blog">
+					<img src="https://via.placeholder.com/370x300" alt="#">
+					<div class="content">
+						<p class="date">22 July , 2020. Monday</p>
+						<a href="#" class="title">Sed adipiscing ornare.</a>
+						<a href="#" class="more-btn">Continue Reading</a>
+					</div>
+				</div>
+				<!-- End Single Blog  -->
+			</div>
+			<div class="col-lg-4 col-md-6 col-12">
+				<!-- Start Single Blog  -->
+				<div class="shop-single-blog">
+					<img src="https://via.placeholder.com/370x300" alt="#">
+					<div class="content">
+						<p class="date">22 July, 2020. Monday</p>
+						<a href="#" class="title">Man’s Fashion Winter Sale</a>
+						<a href="#" class="more-btn">Continue Reading</a>
+					</div>
+				</div>
+				<!-- End Single Blog  -->
+			</div>
+			<div class="col-lg-4 col-md-6 col-12">
+				<!-- Start Single Blog  -->
+				<div class="shop-single-blog">
+					<img src="https://via.placeholder.com/370x300" alt="#">
+					<div class="content">
+						<p class="date">22 July, 2020. Monday</p>
+						<a href="#" class="title">Women Fashion Festive</a>
+						<a href="#" class="more-btn">Continue Reading</a>
+					</div>
+				</div>
+				<!-- End Single Blog  -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Shop Blog  -->
+
+<!-- Start Shop Services Area -->
+<section class="shop-services section home">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-12">
+				<!-- Start Single Service -->
+				<div class="single-service">
+					<i class="ti-rocket"></i>
+					<h4>Free shiping</h4>
+					<p>Orders over $100</p>
+				</div>
+				<!-- End Single Service -->
+			</div>
+			<div class="col-lg-3 col-md-6 col-12">
+				<!-- Start Single Service -->
+				<div class="single-service">
+					<i class="ti-reload"></i>
+					<h4>Free Return</h4>
+					<p>Within 30 days returns</p>
+				</div>
+				<!-- End Single Service -->
+			</div>
+			<div class="col-lg-3 col-md-6 col-12">
+				<!-- Start Single Service -->
+				<div class="single-service">
+					<i class="ti-lock"></i>
+					<h4>Sucure Payment</h4>
+					<p>100% secure payment</p>
+				</div>
+				<!-- End Single Service -->
+			</div>
+			<div class="col-lg-3 col-md-6 col-12">
+				<!-- Start Single Service -->
+				<div class="single-service">
+					<i class="ti-tag"></i>
+					<h4>Best Peice</h4>
+					<p>Guaranteed price</p>
+				</div>
+				<!-- End Single Service -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Shop Services Area -->
 
 
-        })
-    </script>
 
-</html>
+<?php
+include_once "footCommerce.php";
+?>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"  data-backdrop="static">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
+			</div>
+			<div class="modal-body">
+				<div class="row no-gutters">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<!-- Product Slider -->
+						<div class="product-gallery">
+							<div class="quickview-slider-active">
+								<div class="single-slider">
+									<img src="https://via.placeholder.com/569x528" alt="#">
+								</div>
+								<div class="single-slider">
+									<img src="https://via.placeholder.com/569x528" alt="#">
+								</div>
+								<div class="single-slider">
+									<img src="https://via.placeholder.com/569x528" alt="#">
+								</div>
+								<div class="single-slider">
+									<img src="https://via.placeholder.com/569x528" alt="#">
+								</div>
+							</div>
+						</div>
+						<!-- End Product slider -->
+					</div>
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<div class="quickview-content">
+							<h2>Flared Shift Dress</h2>
+							<div class="quickview-ratting-review">
+								<div class="quickview-ratting-wrap">
+									<div class="quickview-ratting">
+										<i class="yellow fa fa-star"></i>
+										<i class="yellow fa fa-star"></i>
+										<i class="yellow fa fa-star"></i>
+										<i class="yellow fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+									<a href="#"> (1 customer review)</a>
+								</div>
+								<div class="quickview-stock">
+									<span><i class="fa fa-check-circle-o"></i> in stock</span>
+								</div>
+							</div>
+							<h3>$29.00</h3>
+							<div class="quickview-peragraph">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
+							</div>
+							<div class="size">
+								<div class="row">
+									<div class="col-lg-6 col-12">
+										<h5 class="title">Size</h5>
+										<select>
+											<option selected="selected">s</option>
+											<option>m</option>
+											<option>l</option>
+											<option>xl</option>
+										</select>
+									</div>
+									<div class="col-lg-6 col-12">
+										<h5 class="title">Color</h5>
+										<select>
+											<option selected="selected">orange</option>
+											<option>purple</option>
+											<option>black</option>
+											<option>pink</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="quantity">
+								<!-- Input Order -->
+								<div class="input-group">
+									<div class="button minus">
+										<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+											<i class="ti-minus"></i>
+										</button>
+									</div>
+									<input type="text" name="quant[1]" class="input-number" data-min="1" data-max="1000" value="1">
+									<div class="button plus">
+										<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+											<i class="ti-plus"></i>
+										</button>
+									</div>
+								</div>
+								<!--/ End Input Order -->
+							</div>
+							<div class="add-to-cart">
+								<a href="#" class="btn">Add to cart</a>
+								<a href="#" class="btn min"><i class="ti-heart"></i></a>
+								<a href="#" class="btn min"><i class="fa fa-compress"></i></a>
+							</div>
+							<div class="default-social">
+								<h4 class="share-now">Share:</h4>
+								<ul>
+									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a class="youtube" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+									<li><a class="dribbble" href="#"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal end!-->
+
+<script>
+	$(document).ready(function(){
+		$("#banners").hover( function(){
+			$(".contents").addClass("bg-dark text-white");
+		});
+	})
+</script>

@@ -91,28 +91,49 @@ public function Verify($tabl,$colum, $value){
  
 }
 
-public function Updated($table, $user_id, $rowId, $fields = array()) {
-
-  $columns = [];
-
-  foreach ($fields as $name => $value) {
-      $columns[] = "`{$name}` = :{$name}";
-  }
-
-  $sql = sprintf('UPDATE %s SET %s WHERE  %s = %s'
-          , $table
-          , implode(', ', $columns)
-          , $user_id
-  );
-
-  if ($stmt = $this->pdo->prepare($sql)) {
-      $stmt->execute($fields);
-  }
+public function update($data, $conditions){ 
+  if(!empty($data) && is_array($data)){ 
+      $colvalSet = ''; 
+      $whereSql = ''; 
+      $i = 0; 
+      if(!array_key_exists('modified',$data)){ 
+          $data['modified'] = date("Y-m-d H:i:s"); 
+      } 
+      foreach($data as $key=>$val){ 
+          $pre = ($i > 0)?', ':''; 
+          $colvalSet .= $pre.$key."='".$this->getConnection()->$val."'"; 
+          $i++; 
+      } 
+      if(!empty($conditions)&& is_array($conditions)){ 
+          $whereSql .= ' WHERE '; 
+          $i = 0; 
+          foreach($conditions as $key => $value){ 
+              $pre = ($i > 0)?' AND ':''; 
+              $whereSql .= $pre.$key." = '".$value."'"; 
+              $i++; 
+          } 
+      } 
+      $query = "UPDATE ".$this->userTbl." SET ".$colvalSet.$whereSql; 
+      $update = $this->db->query($query); 
+      return $update?$this->db->affected_rows:false; 
+  }else{ 
+      return false; 
+  } 
 }
 // validate email
 function validateEmail($email) {
   $regex = "/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
    if(preg_match($regex, $email)){
+     return 1;
+   }
+   else{
+    return 0;
+   }
+ 
+}
+function validatePhone($phone) {
+  $regex = "/^[0-9]/";
+   if(preg_match($regex, $phone)){
      return 1;
    }
    else{
